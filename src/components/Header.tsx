@@ -5,7 +5,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="h-[64px] bg-zinc-950 text-white px-4 flex items-center fixed left-0 top-0 w-full justify-between">
+    <header className="h-[64px] bg-zinc-950 border-b-4 border-zinc-600 text-white px-4 flex items-center fixed left-0 top-0 w-full justify-between">
       <Link href={"/admin"}>
         <Image
           src={"/logo/logo_light.png"}
