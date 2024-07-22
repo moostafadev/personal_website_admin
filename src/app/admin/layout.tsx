@@ -1,3 +1,4 @@
+import Aside from "@/components/Aside";
 import Header from "@/components/Header";
 import { currentUser } from "@clerk/nextjs/server";
 import { Metadata } from "next";
@@ -22,7 +23,11 @@ const layout = async ({ children }: { children: React.ReactNode }) => {
   return (
     <main>
       <Header />
-      {children}
+      <Aside />
+      <section className="md:ml-[300px] mt-16 p-4">
+        <article className="min-h-[calc(100vh-64px)]">{children}</article>
+      </section>
+      <footer className="md:ml-[300px] p-4">Footer</footer>
     </main>
   );
 };

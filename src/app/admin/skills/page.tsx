@@ -1,7 +1,7 @@
 import React from "react";
 
 const Page = () => {
-  return <h2>Mostafa</h2>;
+  return <div>Mostafa</div>;
 };
 
 export default Page;
