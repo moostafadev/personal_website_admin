@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Header from "@/components/layout/Header";
 import { Button } from "@/components/ui/button";
 import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
