@@ -1,6 +1,7 @@
 import AsideStateWrapper from "@/components/AsideStateWrapper";
 import DynamicSection from "@/components/DynamicSection";
 import Aside from "@/components/layout/Aside";
+import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import { currentUser } from "@clerk/nextjs/server";
 import { Metadata } from "next";
@@ -28,8 +29,8 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
       <AsideStateWrapper>
         <Aside />
         <DynamicSection>{children}</DynamicSection>
+        <Footer />
       </AsideStateWrapper>
-      <footer className="md:ml-[300px] p-4">Footer</footer>
     </main>
   );
 };

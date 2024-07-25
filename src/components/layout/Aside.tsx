@@ -27,13 +27,15 @@ const Aside = () => {
   }, [path]);
   return (
     <aside
-      className={`w-0 bg-zinc-900 text-white md:py-4 h-[calc(100vh-64px)] fixed left-0 bottom-0 md:w-[300px] shadow-lg duration-300 ${
-        !isOpenAside ? "!w-[80px]" : ""
+      className={`bg-zinc-900 text-white py-4 h-[calc(100vh-64px)] fixed left-0 bottom-0 shadow-lg duration-300 overflow-hidden ${
+        !isOpenAside ? "md:!w-[60px]" : "md:w-[300px] w-[60px]"
       }`}
     >
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-4">
         <div
-          className={`bg-white rounded-md px-[1px] cursor-pointer hover:opacity-90 duration-300 relative w-[32px] h-[32px] mx-auto`}
+          className={`bg-white rounded-md px-[1px] cursor-pointer hover:opacity-90 duration-300 relative w-[32px] h-[32px] ${
+            isOpenAside ? "ml-8" : "mx-auto"
+          } hidden md:block`}
           onClick={() => setIsOpenAside((prev) => !prev)}
         >
           <span
@@ -53,9 +55,25 @@ const Aside = () => {
               path === "/admin" ? "bg-white text-zinc-950" : ""
             } duration-300`}
           >
-            <Link href={"/admin"} className="flex gap-2 items-center py-4 px-8">
+            <Link
+              href={"/admin"}
+              className={`flex gap-2 items-center justify-center md:justify-start py-4 duration-300 ${
+                isOpenAside ? "md:px-8" : "px-2 !justify-center"
+              }`}
+              title="Dashboard"
+            >
               <LayoutDashboard />
-              <span className="font-semibold">Dashboard</span>
+              {isOpenAside ? (
+                <span
+                  className={`font-semibold duration-300 ${
+                    isOpenAside ? "inline-block" : "hidden"
+                  } hidden md:inline-block`}
+                >
+                  Dashboard
+                </span>
+              ) : (
+                ""
+              )}
             </Link>
           </li>
           <AsideDrag
